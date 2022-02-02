@@ -1,12 +1,32 @@
+
+
 function getApi() {
     // fetch request gets a list of all the repos for the node.js organization
-    var requestUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}';
+    var requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=Denver,CO,1&appid=e411420d201b5d2ab3ba0e99dfa72c08';
 
     fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+      console.log(data);
+      const lat = data[0].lat;
+    const lon = data[0].lon;
+       console.log(lat, lon);
+
+    let getWeather = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=e411420d201b5d2ab3ba0e99dfa72c08`;
+
+    console.log(getWeather);
+
+    fetch(getWeather)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (weatherData) {
+        console.log(weatherData);
+    })
     });
+
 }
+
+getApi();
