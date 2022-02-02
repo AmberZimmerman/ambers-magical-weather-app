@@ -2,9 +2,9 @@
 
 
 
-function getApi() {
+function getApi(cityValue) {
     // fetch request gets a list of all the repos for the node.js organization
-    var requestUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=Denver,CO,1&appid=e411420d201b5d2ab3ba0e99dfa72c08';
+    var requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityValue},1&appid=e411420d201b5d2ab3ba0e99dfa72c08`;
 
     fetch(requestUrl)
     .then(function (response) {
@@ -36,16 +36,17 @@ function getApi() {
         console.log(uvi);
     })
 
-    const city = document.getElementById('city');
+    });
+
+}
+
+const city = document.getElementById('city');
     const submitCity = document.getElementById('submitCity');
     
     submitCity.addEventListener("click", function(event) {
         event.preventDefault();
         const cityValue = city.value;
         console.log(cityValue);
-    });
+        getApi(cityValue);
     });
 
-}
-
-getApi();
