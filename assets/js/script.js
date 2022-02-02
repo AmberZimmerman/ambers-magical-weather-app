@@ -24,6 +24,14 @@ function getApi() {
     })
     .then(function (weatherData) {
         console.log(weatherData);
+        const temp = weatherData.current.temp;
+        console.log(temp);
+        const humid = weatherData.current.humidity;
+        console.log(humid);
+        const wind = weatherData.current.wind_speed;
+        console.log(wind);
+        const uvi = weatherData.current.uvi;
+        console.log(uvi);
     })
     });
 
