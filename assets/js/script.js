@@ -13,8 +13,8 @@ function getApi(cityValue) {
     .then(function (data) {
       console.log(data);
       const lat = data[0].lat;
-    const lon = data[0].lon;
-       console.log(lat, lon);
+      const lon = data[0].lon;
+        console.log(lat, lon);
 
      // fetch request takes the long and lat defined above and then inserts taht into this web api that gets the forcast information for that location
     let getWeather = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=e411420d201b5d2ab3ba0e99dfa72c08`;

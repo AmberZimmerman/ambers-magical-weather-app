@@ -16,34 +16,45 @@
     </div>
 </nav>
 
-<form>
-    <label for="citySearch">SEARCH FOR A CITY</label><br>
-    <input type="text" id="city" name="city" value="Austin"><br>
-    <input type="submit" id="submitCity" value="Submit">
-  </form>
-
+<div class="first-column">
+    <div class="row">
+        <div class="col">
+            <form>
+                <label for="citySearch">SEARCH FOR A CITY</label><br>
+                <input type="text" id="city" name="city" value="Austin"><br>
+                <input type="submit" id="submitCity" value="Submit">
+            </form>
+        </div>
+   
+  
+    
 
 <!-- <div class="d-grid gap-2">
     <button class="btn btn-primary" type="button">Button</button>
   </div> -->
 
 <!-- This is the entire container that will hold the information for the five day forecast -->
-<div class="weekforcast">
-    <!-- This will be the large current weather on top of the forecast cards -->
-    <div class="card current" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Date</h5>
-          <p class="card-text">Temp:</p>
-          <p class="card-text">Wind:</p>
-          <p class="card-text">Humidity:</p>
-          <p class="card-text">UV INDEX:</p>
+
+    
+        <div class="col">
+            <div class="weekforcast">
+                <!-- This will be the large current weather on top of the forecast cards -->
+                <div class="card current" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Temp:</p>
+                    <p class="card-text">Wind:</p>
+                    <p class="card-text">Humidity:</p>
+                    <p class="card-text">UV INDEX:</p>
+                </div>
+            </div>
         </div>
     </div>
-    
-    
+</div> 
+
     <div class="row">
         <!-- This will be for day 1 -->
-        <div class="col-sm-2">
+        <div class="col">
             <div class="card day1" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Date</h5>
@@ -54,7 +65,7 @@
             </div>
         </div>
         <!-- This will be for day 2 -->
-        <div class="col-sm-2">
+        <div class="col">
             <div class="card day1" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Date</h5>
@@ -65,7 +76,7 @@
             </div>
         </div>
         <!-- This will be for day 3 -->
-        <div class="col-sm-2">
+        <div class="col">
             <div class="card day1" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Date</h5>
@@ -76,7 +87,7 @@
             </div>
         </div>
         <!-- This will be for day 4 -->
-        <div class="col-sm-2">
+        <div class="col">
             <div class="card day1" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Date</h5>
@@ -87,7 +98,7 @@
             </div>
         </div>
         <!-- This will be for day 5 -->
-        <div class="col-sm-2">
+        <div class="col">
             <div class="card day1" style="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">Date</h5>
@@ -97,6 +108,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 </div>
     <script src="./assets/js/script.js"></script>  
