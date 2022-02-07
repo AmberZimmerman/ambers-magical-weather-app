@@ -70,7 +70,11 @@
                 for (let i = 0; i < 5; i++) {
                     const element = daily[i];
 
+                    const dateDaily = element.dt;
                     const tempDaily = element.temp.min;
+                    const humidDaily = element.humidity;
+                    const windDaily = element.wind_speed;
+                    const uviDaily = element.uvi;
 
 
                     const dailyCardsContainer = document.getElementById("daily-cards-container");
@@ -87,21 +91,30 @@
                     dailyCardBody.classList.add('card-body');
                     cardDaily.appendChild(dailyCardBody);
 
+                    let dateDailyEl = document.createElement('div');
+                    dateDailyEl.innerText = `Date: ${dateDaily}`;
+                    dailyCardBody.appendChild(dateDailyEl);
+
                     let tempDailyEl = document.createElement('div');
                     tempDailyEl.innerText = `Temp: ${tempDaily}`;
                     dailyCardBody.appendChild(tempDailyEl);
+
+                    let windDailyEl = document.createElement('div');
+                    windDailyEl.innerText = `Wind: ${windDaily}`;
+                    dailyCardBody.appendChild(windDailyEl);
+
+                    let humidDailyEl = document.createElement('div');
+                    humidDailyEl.innerText = `Humid: ${humidDaily}`;
+                    dailyCardBody.appendChild(windDailyEl);
+
                     
+
 
                     
                     
-                    colDaily.appendChild(cardDaily);
 
                     
-                    const windDaily = element.wind_speed;
-                    
-                    const humidDaily = element.humidity;
-                    
-                    const uviDaily = element.uvi;
+            
             
                     console.log("temp", tempDaily);
                     console.log("wind", windDaily);
