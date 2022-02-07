@@ -1,62 +1,6 @@
-// let initialWeatherCards = [
-//     {
-//         id: 1,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-//     {
-//         id: 2,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-//     {
-//         id: 3,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-//     {
-//         id: 4,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-//     {
-//         id: 5,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-//     {
-//         id: 6,
-//         date: "",
-//         temp: "",
-//         wind: "",
-//         uvi: ""
-//     },
-    
-// ]
 
-// if (!localStorage.getItem('weatherCards')) {
-//     const weatherCards = JSON.stringify(initialWeatherCards)
-//     localStorage.setItem('weatherCards', weatherCards)
-// }
 
-// function initiateApp () {
-//     console.log('App bootup lets goo');
-//     const weatherCards = JSON.parse(localStorage.getItem('weatherCards'));
-//     // const el = document.getElementById('');
-//     console.log(weatherCards);
 
-//     for (let index = 0; index < weatherCards.length; index++) {
-//         const card = weatherCards[index];
         
     
 
@@ -85,12 +29,18 @@
             })
             .then(function (weatherData) {
                 console.log(weatherData);
+
+                const cardBody = document.getElementById('card-body-current');
+
+                const date = weatherData.current.dt;
+                const dateEl = document.createElement('div');
+                dateEl.innerText = `Date: ${date}`;
+                cardBody.appendChild(dateEl);
                 
                 const temp = weatherData.current.temp;
                 console.log(temp);
                 const tempEl = document.createElement('div');
                 tempEl.innerText = `Temp: ${temp}`;
-                const cardBody = document.getElementById('card-body-current');
                 console.log("card body", cardBody);
                 cardBody.appendChild(tempEl);
                 
@@ -117,18 +67,47 @@
                 const daily = weatherData.daily;
                 console.log(daily);
 
-                for (let i = 0; i < daily.length; i++) {
+                for (let i = 0; i < 5; i++) {
                     const element = daily[i];
+
                     const tempDaily = element.temp.min;
+
+
+                    const dailyCardsContainer = document.getElementById("daily-cards-container");
+
+                    const colDaily = document.createElement('div');
+                    colDaily.classList.add('col');
+                    dailyCardsContainer.appendChild(colDaily);
+                    
+                    const cardDaily = document.createElement('div');
+                    cardDaily.classList.add('card');
+                    colDaily.appendChild(cardDaily);
+
+                    const dailyCardBody = document.createElement('div');
+                    dailyCardBody.classList.add('card-body');
+                    cardDaily.appendChild(dailyCardBody);
+
+                    let tempDailyEl = document.createElement('div');
+                    tempDailyEl.innerText = `Temp: ${tempDaily}`;
+                    dailyCardBody.appendChild(tempDailyEl);
+                    
+
+                    
+                    
+                    colDaily.appendChild(cardDaily);
+
+                    
                     const windDaily = element.wind_speed;
+                    
                     const humidDaily = element.humidity;
+                    
                     const uviDaily = element.uvi;
             
                     console.log("temp", tempDaily);
                     console.log("wind", windDaily);
                     console.log('humid', humidDaily);
-                    
-                    console.log(tempDaily);
+                    console.log("uvi", uviDaily);
+
                     console.log(element);
                 }
                 });
@@ -137,8 +116,7 @@
 
            
         }
-//     }
-// }
+
 
 const city = document.getElementById('city');
 const submitCity = document.getElementById('submitCity');
@@ -147,7 +125,46 @@ submitCity.addEventListener("click", function(event) {
     event.preventDefault();
     const cityValue = city.value;
     console.log(cityValue);
+    // Get api is strictly putting elements on the page
     getApi(cityValue);
+    // local storage is doing its own thing
+    
+    let cityNameOne = JSON.parse(localStorage.getItem('cityNames'));
+    
+    // Check to see if array exists inside local storage
+    if (!cityNameOne) {
+        cityNameOne = [];
+    }
+
+    cityNameOne.push(cityValue);
+
+    console.log("cityNameOne", cityNameOne);
+    localStorage.setItem("cityNames", JSON.stringify (cityNameOne));
+    
+    console.log('citynamesarray', cityNameOne);
 });
     
-// 
+
+
+
+
+
+
+
+
+/**
+ * user loads web page
+ * going to do local storage.get items from local storage
+ * get the array of strings
+ * list of items get out with a for loop
+ * if I have an array that has a list of items, the best way to get them out will be to use a for loop
+ * create a container where we want city names to go
+ * create each individual element where city names will go
+ * each element will have some values because it's based off what the user will click
+ * in container is a list of buttons
+ * each button will have data attributes
+ * give each button the value of a city name
+ * each button will have an event listener
+ * each time the button is clicked
+ * add event listener to pass in the value again
+ */
