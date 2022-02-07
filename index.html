@@ -17,15 +17,14 @@
 </nav>
 
 <div class="first-column">
-    <div class="row">
-        <div class="col">
-            <form>
-                <label for="citySearch">SEARCH FOR A CITY</label><br>
-                <input type="text" id="city" name="city" value="Austin"><br>
-                <input type="submit" id="submitCity" value="Submit">
-            </form>
-        </div>
-   
+    <div class="col hei">
+                <form>
+                    <label for="citySearch">SEARCH FOR A CITY</label><br>
+                    <input type="text" id="city" name="city" placeholder="Austin"><br>
+                    <input type="submit" id="submitCity" value="Submit">
+                </form>
+    </div>
+</div>  
   
     
 
@@ -35,83 +34,82 @@
 
 <!-- This is the entire container that will hold the information for the five day forecast -->
 
-    
-        <div class="col">
+<div class="container">  
+    <div class="col">
+        <div class="row">
             <div class="weekforcast">
                 <!-- This will be the large current weather on top of the forecast cards -->
-                <div class="card current" style="width: 18rem;">
+                <div class="card-current">
+                    <div id="card-body-current">
+                        <h5 id="card-date">Date</h5>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+        <div class="row">
+            <!-- This will be for day 1 -->
+            <div class="col">
+                <div class="card day2">
                     <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <p class="card-text">Temp:</p>
-                    <p class="card-text">Wind:</p>
-                    <p class="card-text">Humidity:</p>
-                    <p class="card-text">UV INDEX:</p>
+                        <h5 class="card-title">Date</h5>
+                        <p class="card-text">Temp:</p>
+                        <p class="card-text">Wind:</p>
+                        <p class="card-text">Humidity:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This will be for day 2 -->
+            <div class="col">
+                <div class="card day3">
+                    <div class="card-body">
+                        <h5 class="card-title">Date</h5>
+                        <p class="card-text">Temp:</p>
+                        <p class="card-text">Wind:</p>
+                        <p class="card-text">Humidity:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This will be for day 3 -->
+            <div class="col">
+                <div class="card day4">
+                    <div class="card-body">
+                        <h5 class="card-title">Date</h5>
+                        <p class="card-text">Temp:</p>
+                        <p class="card-text">Wind:</p>
+                        <p class="card-text">Humidity:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This will be for day 4 -->
+            <div class="col">
+                <div class="card day5">
+                    <div class="card-body">
+                        <h5 class="card-title">Date</h5>
+                        <p class="card-text">Temp:</p>
+                        <p class="card-text">Wind:</p>
+                        <p class="card-text">Humidity:</p>
+                    </div>
+                </div>
+            </div>
+            <!-- This will be for day 5 -->
+            <div class="col">
+                <div class="card day6">
+                    <div class="card-body">
+                        <h5 class="card-title">Date</h5>
+                        <p class="card-text">Temp:</p>
+                        <p class="card-text">Wind:</p>
+                        <p class="card-text">Humidity:</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div> 
 
-    <div class="row">
-        <!-- This will be for day 1 -->
-        <div class="col">
-            <div class="card day1" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Wind:</p>
-                <p class="card-text">Humidity:</p>
-                </div>
-            </div>
-        </div>
-        <!-- This will be for day 2 -->
-        <div class="col">
-            <div class="card day1" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Wind:</p>
-                <p class="card-text">Humidity:</p>
-                </div>
-            </div>
-        </div>
-        <!-- This will be for day 3 -->
-        <div class="col">
-            <div class="card day1" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Wind:</p>
-                <p class="card-text">Humidity:</p>
-                </div>
-            </div>
-        </div>
-        <!-- This will be for day 4 -->
-        <div class="col">
-            <div class="card day1" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Wind:</p>
-                <p class="card-text">Humidity:</p>
-                </div>
-            </div>
-        </div>
-        <!-- This will be for day 5 -->
-        <div class="col">
-            <div class="card day1" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <p class="card-text">Temp:</p>
-                <p class="card-text">Wind:</p>
-                <p class="card-text">Humidity:</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-</div>
+
     <script src="./assets/js/script.js"></script>  
 </body>
 </html>
